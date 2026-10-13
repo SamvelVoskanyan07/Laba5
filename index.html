@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 4 - Bootstrap</title>
+    <!-- Подключаем Bootstrap 5 CSS через CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light d-flex flex-column min-vh-100">
+
+    <!-- Шапка сайта -->
+    <header class="site-header navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm py-2">
+        <div class="container">
+            <div class="d-flex align-items-center gap-2">
+                <img src="https://via.placeholder.com/40" alt="Логотип" class="rounded">
+                <span class="navbar-brand mb-0 h1">Название сайта</span>
+            </div>
+            <div class="nav-wrapper px-3 py-2 rounded border border-secondary">
+                <nav class="nav gap-3">
+                    <a class="nav-link text-light p-0" href="#">Ссылка меню 1</a>
+                    <a class="nav-link text-light p-0" href="#">Ссылка 2</a>
+                    <a class="nav-link text-light p-0" href="#">Ссылка 3</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Основной контент (с использованием сетки и порядка блоков для Mobile First) -->
+    <main class="container my-4 flex-grow-1">
+        <div class="row g-4 d-flex flex-column">
+
+            <!-- Лабораторная работа №2 (order-1 на мобильных делает её первой) -->
+            <div class="col-12 order-1 lab-table-section">
+                <section class="bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 mb-3 pb-2 border-bottom text-dark">Лабораторная работа №2 (Таблица с данными)</h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped mb-0">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Колонка 1</th>
+                                    <th>Колонка 2</th>
+                                    <th>Колонка 3</th>
+                                    <th>Колонка 4</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td rowspan="2">Объединенная ячейка (rowspan)</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                                <tr>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">Объединенная по горизонтали (colspan)</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                                <tr>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                                <tr>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                                <tr>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                    <td>Данные</td>
+                                </tr>
+                            </tbody>
+                            <td>Данные</td>
+                            <td>Данные</td>
+                            <td>Данные</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Лабораторная работа №1 (order-2) -->
+            <div class="col-12 order-2 lab-links-section">
+                <section class="bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 mb-3 pb-2 border-bottom text-dark">Лабораторная работа №1 (Список гиперссылок)</h2>
+                    <ul class="ps-3 mb-0">
+                        <li class="mb-2"><a href="https://kubsu.ru" target="_blank" class="text-decoration-none">Абсолютную гиперссылку на главную страницу сайта kubsu.ru</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru" target="_blank" class="text-decoration-none">Абсолютную на главную сайта kubsu.ru в протоколе https</a></li>
+                        <li class="mb-2"><a href="https://kubsu.ru"><img src="https://via.placeholder.com/150x50" alt="Ссылка-изображение" class="img-fluid"></a></li>
+                        <li class="mb-2"><a href="/internal-page" class="text-decoration-none">Сокращенную ссылку на внутреннюю страницу</a></li>
+                        <li class="mb-2"><a href="/" class="text-decoration-none">Сокращенную ссылку на главную страницу</a></li>
+                        <li class="mb-2"><a href="#bottom-form" class="text-decoration-none">Ссылку на фрагмент текущей страницы</a></li>
+                    </ul>
+                </section>
+            </div>
+
+            <!-- Форма обратной связи (order-3) -->
+            <div class="col-12 order-3 lab-form-section" id="bottom-form">
+                <section class="bg-white p-4 rounded shadow-sm">
+                    <h2 class="h4 mb-3 pb-2 border-bottom text-dark">Форма обратной связи / анкеты</h2>
+                    <form action="#" method="POST" class="feedback-form">
+                        <div class="mb-3">
+                            <label for="fio" class="form-label fw-bold">1) ФИО:</label>
+                            <input type="text" id="fio" name="fio" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label fw-bold">2) Телефон:</label>
+                            <input type="tel" id="phone" name="phone" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-bold">3) E-mail:</label>
+                            <input type="email" id="email" name="email" class="form-control">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Отправить</button>
+                    </form>
+                </section>
+                <!-- Лабораторная работа №5 (Калькулятор) -->
+                <div class="col-12 mt-4">
+                    <section class="bg-white p-4 rounded shadow-sm">
+                        <h2 class="h4 mb-3 pb-2 border-bottom text-dark">Лабораторная работа №5 (Калькулятор стоимости заказа)</h2>
+                        <form id="order-form">
+                            <div class="mb-3">
+                                <label for="product" class="form-label fw-bold">Выберите товар:</label>
+                                <select id="product" class="form-select">
+                                    <option value="500">Товар А — 500 руб.</option>
+                                    <option value="1200">Товар Б — 1200 руб.</option>
+                                    <option value="2500">Товар В — 2500 руб.</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="quantity" class="form-label fw-bold">Количество:</label>
+                                <input type="text" id="quantity" class="form-control" value="1">
+                            </div>
+                            <button type="button" id="calc-button" class="btn btn-primary">Подсчитать стоимость</button>
+                        </form>
+                        <h3 id="result" class="mt-3 h5"></h3>
+                        <p id="error" class="text-danger fw-bold mt-2"></p>
+                    </section>
+                </div>
+
+                <!-- Подключаем твой отдельный файл script.js с логикой калькулятора -->
+                <script src="script.js"></script>
